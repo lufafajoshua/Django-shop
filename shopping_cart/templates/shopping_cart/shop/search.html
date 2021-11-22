@@ -1,0 +1,33 @@
+<h1>Search Page</h1>
+
+<br/>
+<form action="{% url 'shopping_cart:search' %}" method="GET" value="{{request.GET.q}}">
+    Select<select name="select" id="select">
+        <option value="reference">Order Reference code</option>
+        <option value="name">Owner's name</option>
+    </select>
+Search <input type="text" name="q" value="{{request.GET.q}}" placeholder="Search orders"/>
+<input type="submit" name="submit" value="Search"/>
+</form>
+
+
+{% if submitbutton == request.GET.q != '' %}
+{% if results %}
+<h1>Results for <b>{{ request.GET.q }}</b></h1>
+<br/><br/>
+
+{% for result in results %} 
+
+{{result}}
+<a href="{% url 'shopping_cart:order_summary'%}"> {{result}}</a>
+<br/>
+
+
+<br/>
+
+{% endfor %}
+
+{% else %}
+No search results for this query
+{% endif %}
+{% endif %}

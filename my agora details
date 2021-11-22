@@ -1,0 +1,16 @@
+Agora account details
+email = lufafajosh@gmail.com
+password = Jerosha@1998
+
+
+useful links https://rayanuthalas.medium.com/build-a-video-call-website-using-django-agora-a20ba6b8e7d5
+
+multiple images with django links
+https://medium.com/ibisdev/upload-multiple-images-to-a-model-with-django-fd00d8551a1c
+
+
+
+
+<div class="img-fluid">		
+    {{ product | image:product.id}}<br>
+</div>	

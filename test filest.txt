@@ -1,0 +1,23 @@
+<img class="img-fluid" src="/{{ MEDIA_URL }} {{ product | image:product.id}}" alt="">
+<img class="img-fluid" src=" {{ product.image.url }}" alt="">
+{{ product | image:product.id}}
+#Flask statistics
+https://pypi.org/project/flask-statistics/
+
+
+
+Life at RegioHelden GmbH
+Exactly your kind of thing? Start your cover letter with the sentence “I am your new Django Hero, because…”. Send your cover letter, CV, salary requirements (EUR), as well as your date of entry with our online application form.
+
+HR-Hero: Tanja
+Any questions? For further informations please call
++49 711 128 501-888
+
+About RegioHelden GmbH
+
+RegioHelden is one of the fastest growing enterprises for local Internet advertising in Germany. We offer regional Internet advertising for small and medium-sized businesses in over 80 industry sectors.
+
+10 locations | 250 employees
+certified Google AdWords-Partner since 2009
+Google Premium SME-Partner since 2012
+part of Ströer since 2015

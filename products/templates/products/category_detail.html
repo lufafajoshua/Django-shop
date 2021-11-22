@@ -1,0 +1,41 @@
+
+{% block content %}
+        
+<form action="{% url 'products:category_detail' category.id%}" method="post">
+    {% csrf_token %} 
+    <p>{{ category.name }}</p>
+    <h4>Products</h4>
+    {% for object in products %}   
+        <div class="col col1">
+            <div class="f_p_item">
+                <div class="f_p_img">
+                    <a href="{% url 'products:product_detail' object.id %}"><img class="img-fluid" src=" {{ object.image.url }}" alt=""></a>
+                    <div class="p_icon">
+                        <a href="{% url 'products:wishlist' object.id %}">
+                            <i class="lnr lnr-heart"></i>
+                        </a>
+                        {% if object in user.profile.ebooks.all %}
+                        <p>
+                            <a href="{% url 'shopping_cart:my_orders' %}"><i class="lnr lnr-cart"></i></a>
+                            </p>            
+                        {% elif object in current_order_products %}
+                            <a href="{% url 'shopping_cart:order_summary' %}" ><i class="lnr lnr-cart"></i></a>
+                        {% else %}
+                        <a href="{% url 'shopping_cart:add_to_cart' object.id %}">
+                            <i class="lnr lnr-cart"></i>
+                        </a>
+                        {% endif %}
+                        
+                    </div>
+                </div>
+                <a href="{% url 'products:product_detail' object.id %}">
+                    <h4>{{object.name}}</h4>
+                </a>
+                <h5>Ush{{object.price}}</h5>
+            </div>
+        </div>
+        
+        {% endfor %}
+   </form>
+
+   {% endblock content %}
